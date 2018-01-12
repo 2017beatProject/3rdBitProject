@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -139,9 +138,7 @@
 							}
 						}
 					});
-
 				});
-
 	});
 </script>
 </head>
@@ -160,7 +157,8 @@
 				<button type="button" id="idDoubleCheck">중복확인</button>
 			</div>
 			<div id="pw">
-				<label for="password">비밀번호</label> <input type="password" name="mpw"
+				<label 
+				for="password">비밀번호</label> <input type="password" name="mpw"
 					id="pwInput" />
 				<div id="pwInputErr">암호를 입력해주세요.</div>
 			</div>

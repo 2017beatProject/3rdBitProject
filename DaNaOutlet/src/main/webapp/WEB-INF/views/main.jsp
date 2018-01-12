@@ -42,7 +42,7 @@
 	Hello world!  
 </h1>
 
-<a href="join">회원가입</a>
+<a href="/join">회원가입</a>
 
 <P>  The time on the server is ${serverTime}. </P>
 </body>

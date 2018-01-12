@@ -19,4 +19,10 @@ public class MemberDaoImpl implements MemberDao {
 		return session.selectList("com.bit.daNaOutlet.model.MemberDao.selectAll");
 	}
 
+	@Override
+	public Object selectOne(int mnum) throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("com.bit.daNaOutlet.model.MemberDao.selectOne",mnum);
+	}
+
 }

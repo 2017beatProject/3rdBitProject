@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
-
+		
 		<property value="org.gjt.mm.mysql.Driver" name="driverClassName" />
 
 		<property value="jdbc:mysql://203.236.209.206:3306/xe" name="url" />
-
+		
 		<property value="scott" name="username" />
 
 		<property value="tiger" name="password" />
 
 	</bean>
-
+	
 
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
 
@@ -32,5 +33,8 @@
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 
 	</bean>
+	
+	<bean id="memberDao" class="com.bit.daNaOutlet.model.MemberDaoImpl" p:session-ref="sqlSession"></bean>
 
 </beans>
+

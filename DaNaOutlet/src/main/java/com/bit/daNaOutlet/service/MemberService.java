@@ -9,6 +9,8 @@ import com.bit.daNaOutlet.model.entity.MemberVo;
 
 public interface MemberService {
 
-	void selectAll(SqlSession sqlSession, Model model);
+	void selectAll(Model model) throws Exception;
+
+	void selectOne(Model model, int mnum) throws Exception;
 	
 }
