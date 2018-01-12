@@ -16,7 +16,8 @@ public class MemberServiceImpl implements MemberService {
 	MemberDao dao;
 	
 	@Override
-	public void selectAll(Model model) throws Exception {		
+	public void selectAll(Model model) throws Exception {
+		
 		model.addAttribute("list",dao.selectAll());
 		
 	}
@@ -25,6 +26,12 @@ public class MemberServiceImpl implements MemberService {
 	public void selectOne(Model model, int mnum) throws Exception {
 		model.addAttribute("bean",dao.selectOne(mnum));
 		
+	}
+
+	@Override
+	public void memberAdd(MemberVo bean) throws Exception {
+		bean.setMnum(dao.mNumOne());
+		dao.memberAdd(bean);	
 	}
 
 }

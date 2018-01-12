@@ -20,9 +20,19 @@ public class MemberDaoImpl implements MemberDao {
 	}
 
 	@Override
-	public Object selectOne(int mnum) throws Exception {
-		// TODO Auto-generated method stub
+	public MemberVo selectOne(int mnum) throws Exception {
 		return session.selectOne("com.bit.daNaOutlet.model.MemberDao.selectOne",mnum);
+	}
+
+	@Override
+	public void memberAdd(MemberVo bean) {
+		session.selectOne("com.bit.daNaOutlet.model.MemberDao.memberAdd",bean);	
+	}
+
+	@Override
+	public int mNumOne() throws Exception {
+		// TODO Auto-generated method stub
+		return session.selectOne("com.bit.daNaOutlet.model.MemberDao.mnumOne");
 	}
 
 }

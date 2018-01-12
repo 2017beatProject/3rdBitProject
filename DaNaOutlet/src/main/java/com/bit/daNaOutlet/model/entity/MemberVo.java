@@ -1,19 +1,20 @@
 package com.bit.daNaOutlet.model.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class MemberVo {
 
 	private int mnum;
 	private String name;
-	private int phone;
+	private String phone;
 	private Date mbirth;
 	private String id;
 	private String mail;
 	private String addr;
 	private String addrn;
 	private String password;
-	
+	private String sex;
+
 	public MemberVo() {
 		// TODO Auto-generated constructor stub
 	}
@@ -34,11 +35,11 @@ public class MemberVo {
 		this.name = name;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -90,8 +91,16 @@ public class MemberVo {
 		this.password = password;
 	}
 
-	public MemberVo(int mnum, String name, int phone, Date mbirth, String id, String mail, String addr, String addrn,
-			String password) {
+	public String getSex() {
+		return sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public MemberVo(int mnum, String name, String phone, Date mbirth, String id, String mail, String addr, String addrn,
+			String password, String sex) {
 		super();
 		this.mnum = mnum;
 		this.name = name;
@@ -102,6 +111,14 @@ public class MemberVo {
 		this.addr = addr;
 		this.addrn = addrn;
 		this.password = password;
+		this.sex = sex;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberVo [mnum=" + mnum + ", name=" + name + ", phone=" + phone + ", mbirth=" + mbirth + ", id=" + id
+				+ ", mail=" + mail + ", addr=" + addr + ", addrn=" + addrn + ", password=" + password + ", sex=" + sex
+				+ "]";
 	}
 
 	@Override
@@ -112,10 +129,12 @@ public class MemberVo {
 		result = prime * result + ((addrn == null) ? 0 : addrn.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((mail == null) ? 0 : mail.hashCode());
+		result = prime * result + ((mbirth == null) ? 0 : mbirth.hashCode());
 		result = prime * result + mnum;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((password == null) ? 0 : password.hashCode());
-		result = prime * result + phone;
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result + ((sex == null) ? 0 : sex.hashCode());
 		return result;
 	}
 
@@ -148,6 +167,11 @@ public class MemberVo {
 				return false;
 		} else if (!mail.equals(other.mail))
 			return false;
+		if (mbirth == null) {
+			if (other.mbirth != null)
+				return false;
+		} else if (!mbirth.equals(other.mbirth))
+			return false;
 		if (mnum != other.mnum)
 			return false;
 		if (name == null) {
@@ -160,19 +184,18 @@ public class MemberVo {
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (phone != other.phone)
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
+		if (sex == null) {
+			if (other.sex != null)
+				return false;
+		} else if (!sex.equals(other.sex))
 			return false;
 		return true;
 	}
-
-	@Override
-	public String toString() {
-		return "MemberVo [mnum=" + mnum + ", name=" + name + ", phone=" + phone + ", mbirth=" + mbirth + ", id=" + id
-				+ ", mail=" + mail + ", addr=" + addr + ", addrn=" + addrn + ", password=" + password + "]";
-	}
-
-	
-	
 	
 	
 }

@@ -17,7 +17,7 @@
 <script src="../resources/js/idValidation.js"></script>
 <script src="../resources/js/jquery.mobile-1.4.5.js"></script>
 
-<script>
+<%-- <script>
 	var errList = [ "pwInputErr", "pwInputReErr", "nameErr", "bDayErr",
 			"genErr", "phoErr", "emErr", "addressErr" ];
 	var inputList = [ "pwInput", "pwInputRe", "userName", "bDay", "gender",
@@ -140,15 +140,15 @@
 					});
 				});
 	});
-</script>
+</script> --%>
 </head>
 <body>
 <div data-role="page">
 <div data-role="header">
-<h1>행복해</h1>
+<h1>회원가입</h1>
 </div>
 <div data-role="content">
-		<form id="joinForm" name="JoinForm" role="form" action="join.lms"
+		<form id="joinForm" name="JoinForm"  role="form" action="/join"
 			method="post">		
 			
 			<div id="id">
@@ -175,8 +175,8 @@
 				<div id="nameErr">이름을 입력해주세요.</div>
 			</div>
 			<div id="birth">
-				<label for="birth">생년월일</label> <input type="text" id="bDay"
-					name="birth" readonly="readonly">
+				<label for="birth">생년월일</label> <input type="date" id="bDay"
+					name="mbirth" >
 				<div id="bDayErr">생년월일을 입력해주세요.</div>
 			</div>
 			<div id="number">
@@ -192,18 +192,18 @@
 			</div>
 			<div id="address">
 				<label for="address">주소</label> <input type="text" id="postcode"
-					placeholder="우편번호" name="maddnum"> <input type="button"
+					placeholder="우편번호" name="addrn"> <input type="button"
 					onclick="execDaumPostcode()" value="우편번호 찾기"><br> <input
-					type="text" id="roadAddress" placeholder="도로명주소" name="maddress"><br>
+					type="text" id="roadAddress" placeholder="도로명주소" name="addr"><br>
 				<input type="text" id="jibunAddress" placeholder="지번주소"> <span
 					id="guide" style="color: #999"></span>
 				<div id="addressErr">올바른 주소를 입력해주세요.</div>
 			</div>
 			<div id="gender">
-				<label for="gender">성별</label> <select name="mzen">
+				<label for="gender">성별</label> <select id="sex" name="sex">
 					<option value="">성별을 선택해주세요</option>
-					<option value="1">남성</option>
-					<option value="2">여성</option>
+					<option value="남성">남성</option>
+					<option value="여성">여성</option>
 				</select>
 				<div id="genErr">성별을 선택해주세요.</div>
 			</div>

@@ -10,4 +10,11 @@
 	<select id="selectOne" parameterType="int" resultType="com.bit.daNaOutlet.model.entity.MemberVo">
 		SELECT * FROM DANAMEMBER WHERE MNUM=#{value}
 	</select>
+	<select id="mnumOne" resultType="int">
+		SELECT MAX(MNUM+1) FROM DANAMEMBER
+	</select>
+	<insert id="memberAdd" parameterType="com.bit.daNaOutlet.model.entity.MemberVo">
+		INSERT INTO DANAMEMBER(MNUM,NAME,PHONE,MBIRTH,ID,MAIL,ADDR,ADDRN,PASSWORD,SEX) VALUES(#{mnum},#{name},#{phone},#{mbirth},#{id},#{mail},#{addr},#{addrn},#{password},#{sex})
+	</insert>
+	
 </mapper>

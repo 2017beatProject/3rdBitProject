@@ -12,5 +12,8 @@ public interface MemberService {
 	void selectAll(Model model) throws Exception;
 
 	void selectOne(Model model, int mnum) throws Exception;
+
+	void memberAdd(MemberVo bean) throws Exception;
+	
 	
 }

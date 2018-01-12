@@ -7,6 +7,8 @@ import com.bit.daNaOutlet.model.entity.MemberVo;
 public interface MemberDao {
 
 	List<MemberVo> selectAll() throws Exception;
-
-	Object selectOne(int mnum) throws Exception;
+	MemberVo selectOne(int mnum) throws Exception;
+	int mNumOne() throws Exception;
+	void memberAdd(MemberVo bean);
+	
 } 
