@@ -152,13 +152,13 @@
 			method="post">		
 			
 			<div id="id">
-				<label for="id">아이디</label> <input type="text" name="mid"
+				<label for="id">아이디</label> <input type="text" name="id"
 					id="idInput" />
 				<button type="button" id="idDoubleCheck">중복확인</button>
 			</div>
 			<div id="pw">
 				<label 
-				for="password">비밀번호</label> <input type="password" name="mpw"
+				for="password">비밀번호</label> <input type="password" name="password"
 					id="pwInput" />
 				<div id="pwInputErr">암호를 입력해주세요.</div>
 			</div>
@@ -171,21 +171,21 @@
 			</div>
 			<div id="name">
 				<label for="name">이름</label> <input type="text" id="userName"
-					name="mname">
+					name="name">
 				<div id="nameErr">이름을 입력해주세요.</div>
 			</div>
 			<div id="birth">
 				<label for="birth">생년월일</label> <input type="text" id="bDay"
-					name="mbirth" readonly="readonly">
+					name="birth" readonly="readonly">
 				<div id="bDayErr">생년월일을 입력해주세요.</div>
 			</div>
 			<div id="number">
 				<label for="number">연락처</label> <input type="text" id="phoneFirst"
-					name="mphone">
+					name="phone">
 				<div id="phoErr">전화번호를 입력해주세요.</div>
 			</div>
 			<div id="mail">
-				<label for="mail">e_mail</label> <input type="email" name="mmail"
+				<label for="mail">e_mail</label> <input type="email" name="mail"
 					id="email" />
 				<button type="button" id="send">인증메일전송</button>
 				<div id="emErr">올바른 이메일 주소를 입력해주세요.</div>

@@ -33,8 +33,6 @@ public class ShowController {
 		
 		return "join";
 	}
-	
-	
 	@RequestMapping(value="/login")
 	public String login() {
 		
