@@ -30,7 +30,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void memberAdd(MemberVo bean) throws Exception {
-		bean.setMnum(dao.mNumOne());
+		bean.setMnum(dao.mNumOne()); // 번호는 bean 담아있지않아서 dao에서 맥스값+1한 값을 set함 
 		dao.memberAdd(bean);	
 	}
 

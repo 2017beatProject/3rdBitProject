@@ -32,7 +32,7 @@ public class ShowController {
 	public String join() {		
 		return "join";
 	}
-	@RequestMapping(value="/join",method = RequestMethod.POST)
+	@RequestMapping(value="/join",method = RequestMethod.POST) // 회원 가입 부분 
 	public String joinSuccess(@ModelAttribute MemberVo bean,Model model) throws Exception {
 		memberService.memberAdd(bean);		
 		return "member/success";
@@ -42,12 +42,12 @@ public class ShowController {
 		return "login";
 	}
 		
-	@RequestMapping(value="/member", method=RequestMethod.GET)
+	@RequestMapping(value="/member", method=RequestMethod.GET)  // 회원 목록 전체 보기 
 	public String memberList(Model model) throws Exception {
 		memberService.selectAll(model);
 		return "member/memberView";
 	}
-	@RequestMapping(value="/member/{mnum}", method=RequestMethod.GET)
+	@RequestMapping(value="/member/{mnum}", method=RequestMethod.GET)  // 회원 1명에대한 목록 보기
 	public String memberOne(@PathVariable("mnum") int mnum, Model model) throws Exception {
 		memberService.selectOne(model , mnum);
 		return "member/memberOne";
