@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>회원가입 성공 하셨습니다.</h1>
+	<h1>파일 업로드 실패 10개 이하만 가능</h1>
 </body>
 </html>

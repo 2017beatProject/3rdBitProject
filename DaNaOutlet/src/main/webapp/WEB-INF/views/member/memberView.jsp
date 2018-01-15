@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
@@ -12,8 +12,8 @@
 
 <c:forEach items="${list}" var="bean">
 <ul>	
-	<li id="mnum">È¸¿ø¹øÈ£ : ${bean.mnum}</li>
-	<li id="name">¼º¸í : <a href="/member/${bean.mnum}">${bean.name}</a></li>
+	<li id="mnum">íšŒì›ë²ˆí˜¸ : ${bean.mnum}</li>
+	<li id="name">ì„±ëª… : <a href="/member/${bean.mnum}">${bean.name}</a></li>
 	<li id="id">ID : ${bean.id}</li>
 	<li id="password">Password : ${bean.password}</li>
 	<li id="phone">Phone : ${bean.phone}</li>

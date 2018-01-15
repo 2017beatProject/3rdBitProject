@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.bit.daNaOutlet.model.MemberDao">
+	<!-- 회원관리 부분 -->
 	<select id="selectAll" resultType="com.bit.daNaOutlet.model.entity.MemberVo">
 		SELECT * FROM DANAMEMBER
 	</select>
@@ -13,8 +14,29 @@
 	<select id="mnumOne" resultType="int">
 		SELECT MAX(MNUM+1) FROM DANAMEMBER
 	</select>
+	<select id="loginChk" resultType="int" parameterType="com.bit.daNaOutlet.model.entity.LoginVo">	
+		SELECT COUNT(*) FROM DANAMEMBER where id like #{loginId} and password like #{loginPw}
+	</select>
 	<insert id="memberAdd" parameterType="com.bit.daNaOutlet.model.entity.MemberVo">
 		INSERT INTO DANAMEMBER(MNUM,NAME,PHONE,MBIRTH,ID,MAIL,ADDR,ADDRN,PASSWORD,SEX) VALUES(#{mnum},#{name},#{phone},#{mbirth},#{id},#{mail},#{addr},#{addrn},#{password},#{sex})
 	</insert>
-	
+
+	<!-- 핫딜 부분 -->
+	<select id="hotDealNumOne" resultType="int">
+		SELECT MAX(hotDealNum+1) FROM HOTDEAL
+	</select>
+	<select id="hotDealCount" resultType="int">
+		SELECT COUNT(*) FROM HOTDEAL
+	</select>
+	<select id="hotDealAll" resultType="com.bit.daNaOutlet.model.entity.HotDealVo">
+		SELECT * FROM HOTDEAL
+	</select>
+	<insert id="hotDealAdd" parameterType="com.bit.daNaOutlet.model.entity.HotDealVo">
+		INSERT INTO HOTDEAL(PRICE,HOTDEALNUM,LINK,PRODUCTNAME,PRODUCTINTRO) VALUES(#{price},#{hotDealNum},#{link},#{productName},#{productIntro})
+	</insert>
+
+	<!--클립부분  -->
+	<select id="clipList" resultType="com.bit.daNaOutlet.model.entity.ClipVo">
+		SELECT * FROM DANACLIP 
+	</select>	
 </mapper>

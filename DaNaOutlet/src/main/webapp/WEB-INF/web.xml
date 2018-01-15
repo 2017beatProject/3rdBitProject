@@ -7,12 +7,14 @@
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classPath:/config-context.xml</param-value>
+		
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+
 
 	<!-- Processes application requests -->
 	<servlet>
@@ -29,5 +31,7 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	
 
 </web-app>
