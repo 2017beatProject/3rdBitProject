@@ -30,4 +30,13 @@ public class LoginController {
 		out.print(memberService.login(bean));
 	}
 
+	//카카오톡으로 로그인
+	@RequestMapping(value = "/loginKakao", method = RequestMethod.POST)
+	public void loginKakao(HttpServletResponse resp, @ModelAttribute LoginVo bean) throws Exception {
+		resp.setCharacterEncoding("UTF-8");
+		System.out.println("카카오아이디:"+bean.getLoginId());
+		PrintWriter out = resp.getWriter();
+		out.print(memberService.loginKakao(bean));
+	}
+	
 }

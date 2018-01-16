@@ -54,7 +54,6 @@ public class MemberServiceImpl implements MemberService {
 	public void hotDealAll(Model model) throws Exception {
 		model.addAttribute("list",dao.hotDealAll());
 	}
-	
 	@Override
 	public void clipList(Model model) throws Exception {		
 		model.addAttribute("clipList",dao.clipList());
@@ -71,5 +70,15 @@ public class MemberServiceImpl implements MemberService {
 			return "로그인실패";
 		}
 	}
+
+	@Override
+	public String loginKakao(LoginVo bean) throws Exception {
+		
+		if(dao.loginKakao(bean)>0) {return "로그인확인";}
+		
+		return "로그인실패";
+	}
+
+	
 
 }

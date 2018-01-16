@@ -27,4 +27,6 @@ public interface MemberService {
 	void clipList(Model model) throws Exception;
 	
 	String login(LoginVo bean) throws Exception;
+
+	String loginKakao(LoginVo bean) throws Exception;
 }

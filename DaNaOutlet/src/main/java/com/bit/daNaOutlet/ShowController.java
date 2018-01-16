@@ -80,7 +80,6 @@ public class ShowController {
 		memberService.hotDealAll(model);
 		return "hotdeal/hotdeal";
 	}
-	
 	//클립 메인
 	@RequestMapping(value="/clip/",method=RequestMethod.GET)
 	public String clipList(Model model) throws Exception {

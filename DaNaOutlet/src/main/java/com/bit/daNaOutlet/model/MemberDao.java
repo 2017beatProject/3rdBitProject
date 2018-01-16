@@ -25,4 +25,8 @@ public interface MemberDao {
 	
 	/* -- 로그인 관련 DAO -- */
 	int login(LoginVo bean)throws Exception;
+
+	int loginKakao(LoginVo bean);
+
+	int kakolognum() throws Exception;
 } 
